@@ -1,9 +1,9 @@
 const searchbar = document.querySelector("#search-bar");
 const statusMsg = document.querySelector(".status-msg");
 const img = document.querySelector("img");
-const newImageBtn = document.querySelector(".new-image");
+const newImageBtn = document.querySelector(".search-button");
 const api_key = "6oy9SB3U4oOfolfXWyYz2IHrnTfmmYF8";
-// const api_key1 = "6oy9SB3U4oOfolfXWyYz2IHrnTfmmYF81111";
+
 
 function fetchNewImage() {
   statusMsg.textContent = "";
@@ -37,6 +37,3 @@ function fetchNewImage() {
 
 fetchNewImage();
 newImageBtn.addEventListener("click", fetchNewImage);
-
-// ``;
-// `https://api.giphy.com/v1/gifs/translate?api_key=6oy9SB3U4oOfolfXWyYz2IHrnTfmmYF8&s=${searchbar.value}`;
