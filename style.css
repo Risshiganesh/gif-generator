@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+    color: white;
+}
+
+#search-bar{
+    /* border: 2px solid turquoise; */
+    width: 100%;
+}
+
+.gif-search-container{
+
+    /* border: 2px pink solid; */
+    display: grid;
+    justify-items: center;
+
+}
+
+.search-container{
+    /* border: 2px solid greenyellow; */
+    width: 300px;
+    display: grid;
+    grid-template-columns: 1fr 100px;
+    column-gap: 10px;
+}
+
+.gif-source{
+    width: 300px;
+}
+
