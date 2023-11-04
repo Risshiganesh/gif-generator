@@ -4,22 +4,27 @@ const img = document.querySelector("img");
 const newImageBtn = document.querySelector(".search-button");
 const api_key = "6oy9SB3U4oOfolfXWyYz2IHrnTfmmYF8";
 
-
-function fetchNewImage() {
+async function fetchNewImage() {
   statusMsg.textContent = "";
-  fetch(
+  const response = await fetch(
     `https://api.giphy.com/v1/gifs/translate?api_key=${api_key}&s=${searchbar.value}`,
     { mode: "cors" }
-  )
-    .then(function (response) {
-      const responseCopy = response.clone();
-      const responseParsed = responseCopy.json();
+  );
 
-      //   console.log(responseParsed);
-      return responseParsed;
-    })
+  const responseCopy = await response.clone();
+
+  const responseParsed = await responseCopy.json();
+
+  console.log(responseParsed);
+
+  Promise.resolve(responseParsed)
+
+    // .then(function (response) {
+    //   return response.json();
+    // })
     .then(function (response) {
-      console.log(response.data);
+      console.log(response);
+      console.log(response);
       if (response.data.length === 0) {
         statusMsg.textContent = "GIF NOT FOUND!";
         img.src = "";
